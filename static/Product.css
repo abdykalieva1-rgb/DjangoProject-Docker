@@ -559,7 +559,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 108.5vh;
+    height: 100px;
 }
 
 
@@ -570,6 +570,8 @@ body {
 .hero {
     width: 550px;
     height: 500px;
+    transform: translateY(346px);
+
     background-image: url("/static/image/Marussia-B2-prototype.jpg");
     background-size: cover;
     background-position: center;

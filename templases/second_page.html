@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>next_page</title>
+    <link rel="stylesheet" href="{% static 'second_page.css' %}">
+</head>
+<body>
+
+
+<div class="card-wrapper">
+
+<div class="card-container">
+  <div class="card">
+
+    {% if car.image %}
+      <img src="{{ car.image.url }}" alt="{{ car.name }}" class="card-img">
+    {% endif %}
+
+    <div class="card-info">
+      <div class="card-about">
+        <div class="card-time">год:{{ car.year }}</div>
+          <div class="card-time_color"> цвет:{{ car.color }}</div>
+      </div>
+      <h1 class="card-title">{{ car.name}}</h1>
+      <div class="card-creator">{{ car.discriptions }}</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+<a href="{% url 'next_page' %}">
+    <button class="button type1">
+        <span class="btn-txt">ВЕРНУТСЯ</span>
+    </button>
+</a>
+
+
+
+
