@@ -11,26 +11,40 @@
 <div class="card-wrapper">
 
 {% for car in cars %}
-<div class="card-container">
-  <div class="card">
+<a href="{% url 'second_page' car.id %}" class="card-link">
+  <div class="card-container">
+    <div class="card">
 
-    {% if car.image %}
-      <img src="{{ car.image.url }}" alt="{{car.name}}" class="card-img">
-    {% endif %}
+      {% if car.image %}
+        <img src="{{ car.image.url }}" alt="{{ car.name }}" class="card-img">
+      {% endif %}
 
-    <div class="card-info">
-      <div class="card-about">
-        <div class="card-time">{{ car.year }}</div>
+      <div class="card-info">
+        <div class="card-about">
+          <div class="card-time">{{ car.year }}</div>
+        </div>
+        <h1 class="card-title">{{ car.name }}</h1>
+
+
+        <div class="card-creator">{{ car.color }}</div>
+
+
       </div>
-      <h1 class="card-title">{{ car.name }}</h1>
-      <div class="card-creator">{{ car.color }}</div>
-    </div>
 
+    </div>
   </div>
-</div>
+</a>
 {% endfor %}
 
 </div>
 
+
+
+
 </body>
 </html>
+
+
+
+
+
