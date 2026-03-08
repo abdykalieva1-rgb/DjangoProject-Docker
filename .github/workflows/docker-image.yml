@@ -19,3 +19,7 @@ jobs:
         # Собираем временный образ и запускаем внутреннюю проверку Django
         docker build . -t test-container
         docker run test-container python manage.py check
+- name: Run Django Tests
+      run: |
+        # Запускаем тесты внутри Docker-контейнера
+        docker run test-container python manage.py test
