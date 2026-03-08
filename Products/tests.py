@@ -1,6 +1,7 @@
+from Products.models import Car
 from django.test import TestCase
 from django.urls import reverse
-from .models import Car  # Замените на правильное название вашей модели
+
 
 class CarPagesTest(TestCase):
     def setUp(self):
