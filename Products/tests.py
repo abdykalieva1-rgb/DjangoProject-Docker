@@ -17,6 +17,5 @@ class CarPagesTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_second_page_status_code(self):
-        # Теперь мы проверяем переход на страницу конкретной машины
         response = self.client.get(reverse('second_page', args=[self.car.id]))
         self.assertEqual(response.status_code, 200)
