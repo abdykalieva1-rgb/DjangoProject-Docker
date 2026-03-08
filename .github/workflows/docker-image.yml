@@ -13,9 +13,6 @@ jobs:
     
     - name: Build and Test
       run: |
-        # Собираем образ
         docker build . -t test-container
-        # Запускаем проверку Django
         docker run test-container python manage.py check
-        # Запускаем тесты
         docker run test-container python manage.py test
