@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "develop" ] # Проверка срабатывает, когда вы пушите код из PyCharm
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag django-app:$(date +%s)
+      
+    - name: Run Django Check
+      run: |
+        # Собираем временный образ и запускаем внутреннюю проверку Django
+        docker build . -t test-container
+        docker run test-container python manage.py check
