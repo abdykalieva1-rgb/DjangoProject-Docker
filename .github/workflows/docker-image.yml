@@ -14,5 +14,5 @@ jobs:
     - name: Build and Test
       run: |
         docker build . -t test-container
-        docker run test-container python manage.py check
-        docker run test-container python manage.py test
+        # Запускаем проверку и тесты одной командой, чтобы видеть подробный лог
+        docker run test-container sh -c "python manage.py check && python manage.py test"
